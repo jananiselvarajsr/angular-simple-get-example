@@ -1,30 +1,30 @@
 <hello name="{{ name}}"></hello>
 <div class="GetHttp">
-    <h5 class="Get-header">Simple Http GET Request </h5>
-    <form>
-      <label for="userID">UserId</label><br>
-      <input type="text" id="userId" name="userId">
-      <button (click)="sendGetRequest(userId)">Submit</button><br><br>
+	<h5 class="Get-header">Simple Http GET Request </h5>
+	<form>
+		<label for="userID">UserId</label><br>
+		<input type="text" id="userId" name="userId">
+		<button (click)="sendGetRequest(userId)">Submit</button><br><br>
     </form>
-    
-    <div class="Get-body">
-      <table>
-  <thead>
-    <tr>
-      <th>UserId</th>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Completed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{userId}}</td>
-      <td>{{id}}</td>
-      <td>{{title}}</td>
-       <td>{{completed}}</td>
-    </tr>
-  </tbody>
-      </table>
-    </div>
+
+		<div class="Get-body">
+			<table>
+				<thead>
+					<tr>
+						<th>UserId</th>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Completed</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{userId}}</td>
+						<td>{{id}}</td>
+						<td>{{title}}</td>
+						<td>{{completed}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 </div>
