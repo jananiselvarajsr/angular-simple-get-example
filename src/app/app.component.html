@@ -1,7 +1,13 @@
 <hello name="{{ name}}"></hello>
-<div class="card text-center m-3">
-    <h5 class="card-header">Simple Http GET Request </h5>
-    <div class="card-body">
+<div class="GetHttp">
+    <h5 class="Get-header">Simple Http GET Request </h5>
+    <form>
+      <label for="userID">UserId</label><br>
+      <input type="text" id="userId" name="userId">
+      <button (click)="sendGetRequest(userId)">Submit</button><br><br>
+    </form>
+    
+    <div class="Get-body">
       <table>
   <thead>
     <tr>

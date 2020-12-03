@@ -16,7 +16,7 @@ export class AppComponent  {
 
     constructor(private http: HttpClient) { }
 
-    ngOnInit() {
+    sendGetRequest(userId) {
         this.http.get<any>('https://jsonplaceholder.typicode.com/todos/1').subscribe(data => {
             this.userId = data.userId;
             this.id=data.id;
