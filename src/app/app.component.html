@@ -7,8 +7,8 @@
 		<button (click)="sendGetRequest(userId)">Submit</button><br><br>
     </form>
 
-		<div class="Get-body">
-			<table>
+		<div *ngIf="userId"  >
+			<table class="Get-body">
 				<thead>
 					<tr>
 						<th>UserId</th>
