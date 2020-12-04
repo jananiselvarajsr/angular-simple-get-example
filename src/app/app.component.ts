@@ -1,5 +1,6 @@
 import { Component, VERSION } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { AppService } from "./app.service";
 
 @Component({
   selector: "my-app",
@@ -14,16 +15,14 @@ export class AppComponent {
   title;
   completed;
 
-  constructor(private http: HttpClient) {}
+  constructor(private appService: AppService) {}
 
   sendGetRequest(userId) {
-    this.http
-      .get<any>("https://jsonplaceholder.typicode.com/todos/1")
-      .subscribe(data => {
-        this.userId = data.userId;
-        this.id = data.id;
-        this.completed = data.completed;
-        this.title = data.title;
-      });
+    this.appService.getAll().subscribe(data => {
+      this.userId = data.userId;
+      this.id = data.id;
+      this.completed = data.completed;
+      this.title = data.title;
+    });
   }
 }
