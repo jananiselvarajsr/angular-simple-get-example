@@ -1,20 +1,19 @@
-
 <div class="GetHttp">
-	<h5 class="Get-header">Simple Http GET Request </h5>
+	<h5 class="Get-header">Initiate Workbench</h5>
 	<form>
-		<label for="userID">UserId</label><br>
-		<input type="text" id="userId" name="userId">
+		<label for="userID">PNR</label><br>
+		<input type="text" id="userId" name="userId"> &nbsp;
 		<button (click)="sendGetRequest(userId)">Submit</button><br><br>
     </form>
 
-		<div *ngIf="auth"  >
+		<div *ngIf="auth">
 			<table class="Get-body">
 				<thead>
 					<tr>
 						<th>UserId</th>
-						<th>ID</th>
-						<th>Title</th>
-						<th>Completed</th>
+						<th>Amount</th>
+						<th>TravelerRef</th>
+						<th>TicketNumber</th>
 					</tr>
 				</thead>
 				<tbody>

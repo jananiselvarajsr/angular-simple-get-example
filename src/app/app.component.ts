@@ -10,10 +10,10 @@ import { AppService } from "./app.service";
 export class AppComponent {
   name = "Janani ";
   userId;
-  auth: String;
-  value;
-  title;
-  completed;
+  auth: String; //authorization
+  value; //amount
+  title: any; //travelerRef
+  completed; //Ticket number
 
   constructor(private appService: AppService) {}
 
@@ -21,11 +21,14 @@ export class AppComponent {
     this.appService.getAll().subscribe((data: any) => {
       console.log(data);
       this.auth = data.ReservationResponse.Identifier.authority;
-      this.value = data.ReservationResponse.Identifier.value;
+      this.value =
+        data.ReservationResponse.Reservation.Receipt[2].Document[0].Amount.Total;
       console.log(this.auth);
       console.log(this.value);
-      this.completed = "completed";
-      this.title = "InitiateWorkbench";
+      this.completed =
+        data.ReservationResponse.Reservation.Receipt[2].Document[0].Number;
+      this.title =
+        data.ReservationResponse.Reservation.Receipt[2].Document[0].TravelerRef;
     });
   }
 }
