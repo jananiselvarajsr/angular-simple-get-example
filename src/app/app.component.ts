@@ -9,9 +9,9 @@ import { AppService } from "./app.service";
 })
 export class AppComponent {
   name = "Janani ";
-
   userId;
-  id;
+  auth: String;
+  value;
   title;
   completed;
 
@@ -20,10 +20,12 @@ export class AppComponent {
   sendGetRequest(userId) {
     this.appService.getAll().subscribe((data: any) => {
       console.log(data);
-      this.userId = data.userId;
-      this.id = data.id;
-      this.completed = data.completed;
-      this.title = data.title;
+      this.auth = data.ReservationResponse.Identifier.authority;
+      this.value = data.ReservationResponse.Identifier.value;
+      console.log(this.auth);
+      console.log(this.value);
+      this.completed = "completed";
+      this.title = "InitiateWorkbench";
     });
   }
 }

@@ -7,7 +7,7 @@
 		<button (click)="sendGetRequest(userId)">Submit</button><br><br>
     </form>
 
-		<div *ngIf="userId"  >
+		<div *ngIf="auth"  >
 			<table class="Get-body">
 				<thead>
 					<tr>
@@ -19,8 +19,8 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>{{userId}}</td>
-						<td>{{id}}</td>
+						<td>{{auth}}</td>
+						<td>{{value}}</td>
 						<td>{{title}}</td>
 						<td>{{completed}}</td>
 					</tr>
